@@ -12,30 +12,30 @@ Starting from zero:
 ---------
     mkdir -p ~/android/lineage
     cd ~/android/lineage
-    repo init -u git://github.com/LineageOS/android.git -b lineage-17.1
+    repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
     mkdir -p .repo/local_manifests
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/leeco.xml > .repo/local_manifests/leeco.xml
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/leeco.xml > .repo/local_manifests/leeco.xml
     repo sync
     # OPTIONAL to use repopick unless you want to test WIP commits
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/repopick.sh > repopick.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/repopick.sh > repopick.sh
     ./repopick.sh
 
 If you've already synced Lineage-Sources:
 ----------
     mkdir -p .repo/local_manifests
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/leeco.xml > .repo/local_manifests/leeco.xml
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/leeco.xml > .repo/local_manifests/leeco.xml
     repo sync
     # OPTIONAL to use repopick unless you want to test WIP commits
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/repopick.sh > repopick.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/repopick.sh > repopick.sh
     ./repopick.sh
 
 Building
 ----------
     cd ~/android/lineage
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/x2_clean_build.sh > x2_clean_build.sh
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/x2_dirty_build.sh > x2_dirty_build.sh
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/x2_clean_build.sh > zl1_clean_build.sh
-    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-17.1/x2_dirty_build.sh > zl1_dirty_build.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/x2_clean_build.sh > x2_clean_build.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/x2_dirty_build.sh > x2_dirty_build.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/x2_clean_build.sh > zl1_clean_build.sh
+    curl https://raw.githubusercontent.com/LineageOsMaxPlus/local_manifests/lineage-18.1/x2_dirty_build.sh > zl1_dirty_build.sh
     ./x2_clean_build.sh // for x2 clean builds
     ./x2_dirty_build.sh // for x2 dirty builds
     ./zl1_clean_build.sh // for zl1 clean builds
