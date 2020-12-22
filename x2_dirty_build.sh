@@ -10,17 +10,6 @@ export CCACHE_MAX_SIZE=50G
 export CCACHE_EXEC=$(which ccache)
 ccache -M $CCACHE_MAX_SIZE
 
-# encapsulate the build's temp directory.
-# This way it's easier to clean up afterwards
-TMP=$(mktemp -dt)
-TMPDIR=$TMP
-TEMP=$TMP
-
-export TMP TMPDIR TEMP
-
-#make sure jack-server is restarted in TMP
-prebuilts/sdk/tools/jack-admin kill-server
-
 # we want all compiler messages in English
 export LANGUAGE=C
 
@@ -29,15 +18,10 @@ source build/envsetup.sh
 
 # clean the out dir; comment out, if you want to do
 # a dirty build
-# make -j6 ARCH=arm clean
+#make -j$(nproc --all) ARCH=arm clean
+make installclean
 
 # fire up the building process and also log stdout
 # and stderrout
 breakfast lineage_x2-userdebug 2>&1 | tee x2_breakfast.log && \
 brunch lineage_x2-userdebug 2>&1 | tee x2_make.log
-
-#make sure jack-server is stopped in TMP before removal
-prebuilts/sdk/tools/jack-admin kill-server
-
-# remove all temp directories
-rm -rf ${TMP}
